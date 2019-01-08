@@ -1,0 +1,24 @@
+{
+  "name": "qs1-unio-debaerdm",
+  "version": "1.0.0",
+  "description": "## Before the journey",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "prettier":
+      "prettier --single-quote --trailing-comma es5 --write \"./src/**/*.js\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Debaerdm/qs1-unio-Debaerdm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Debaerdm/qs1-unio-Debaerdm/issues"
+  },
+  "homepage": "https://github.com/Debaerdm/qs1-unio-Debaerdm#readme",
+  "devDependencies": {
+    "prettier": "^1.15.3"
+  }
+}
