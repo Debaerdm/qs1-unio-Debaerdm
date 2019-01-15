@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "prettier":
-      "prettier --single-quote --trailing-comma es5 --write \"./src/**/*.js\" "
+    "prettier": "prettier --single-quote --trailing-comma es5 --write \"./src/**/*.js\" "
   },
   "repository": {
     "type": "git",
@@ -20,5 +19,9 @@
   "homepage": "https://github.com/Debaerdm/qs1-unio-Debaerdm#readme",
   "devDependencies": {
     "prettier": "^1.15.3"
+  },
+  "dependencies": {
+    "codecov": "^3.1.0",
+    "nyc": "^13.1.0"
   }
 }

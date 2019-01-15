@@ -6,25 +6,24 @@ const johnSay = say(john);
 const aryaSay = say(arya);
 const sensaSay = say(sensa);
 
-const interval = new Promise((resolve, reject) => {
-    const intervalObj = setInterval(() => {
-        resolve(sensaSay('For the North'));
-    }, 1000);
-
-    setTimeout(() => clearInterval(intervalObj), 10000);
-}).then(value => {
-  return Promise.all([
-    value,
-    Promise.resolve(johnSay('Winter is coming')),
-    new Promise(resolve => {
-      setImmediate(() => {
-        resolve(aryaSay('The king in the North'));
-      });
+let called = true;
+const intervalObj = setInterval(() => {
+  Promise.all([
+    sensaSay('For the North').then(value => {
+      console.log(value);
+    }),
+    new Promise((resolve, reject) => {
+      if (called) {
+        called = false;
+        johnSay('Winter is coming').then(value => {
+          console.log(value);
+        });
+      }
+      resolve();
+    }),
+    aryaSay('The king in the North').then(value => {
+      console.log(value);
     }),
   ]);
-}).then(result => {
-    console.log(result);
-});
-
-console.log(interval);
-
+  setTimeout(() => clearInterval(intervalObj), 10000);
+}, 1000);
